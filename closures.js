@@ -181,95 +181,96 @@ motivation('Billy', 'Bob'); // 'You're doing awesome keep it up Billy Bob.
 
 
 
-// /******************************************************************************\
-// 	#PROBLEM-06
-// \******************************************************************************/
+// // /******************************************************************************\
+// // 	#PROBLEM-06
+// // \******************************************************************************/
 
-/****** INSTRUCTIONS PROBLEM 6 ******/
-/* Inside the module's return object create a publicMethod function that
-invokes privateMethod. Invoke this by calling module.publicMethod(); outside
-the module scope */
+// /****** INSTRUCTIONS PROBLEM 6 ******/
+// /* Inside the module's return object create a publicMethod function that
+// invokes privateMethod. Invoke this by calling module.publicMethod(); outside
+// the module scope */
 
-var module = (function() {
-  var person = {
-    name: "phillip",
-    age: 29,
-    location: "Utah"
-  };
-    function privateMethod(){
-          return "Hi, I'm " + person.name + ", age " + person.age + " from " + person.location;
-  };
+// var module = (function() {
+//   var person = {
+//     name: "phillip",
+//     age: 29,
+//     location: "Utah"
+//   };
+//     function privateMethod(){
+//           return "Hi, I'm " + person.name + ", age " + person.age + " from " + person.location;
+//   }
 
-  // Anything that is being returned is made public and can be invoked from
-  // outside our lexical scope
-          return  function publicMethod() {
-            privateMethod();
-        };// Code here.
-
-
-});
-module.publicMethod();
+//   // Anything that is being returned is made public and can be invoked from
+//   // outside our lexical scope
+//           return  function publicMethod() {
+//             privateMethod();
+//         };// Code here.
 
 
-// /******************************************************************************\
-//  #PROBLEM-07
-//  \******************************************************************************/
-// /****** INSTRUCTIONS PROBLEM 7 ******/
-// /* Here we are given three arrays: an array of friends, an array of second-level
-// friends (friends of friends), and an array of all users. These arrays may share
-// users. Write a function that takes in our existing friends and returns
-// a function that will tell us if a given user is not already a friend. */
-// var friends = ["Tom", "Dick", "Harry"];
-// var secondLevelFriends = ["Anne", "Harry", "Quinton"];
-// var allUsers = ["Tom", "Dick", "Harry", "Anne", "Quinton", "Katie", "Mary"];
-
-// function findPotentialFriends(existingFriends) {
-//  for (var i = 0; i<allUsers.length; i++)
-//   if (allUsers[i])
-// }
-
-// var isNotAFriend = findPotentialFriends( friends );
-// // isNotAFriend(allUsers[0]); // false
-// // isNotAFriend(secondLevelFriends[2]); // true
+// });
+// module.publicMethod();
 
 
-// /******************************************************************************\
-//  #PROBLEM-07 -- BLACK DIAMOND
-//  \******************************************************************************/
-// /* Using your findPotentialFriends function from above and the Array.filter
-// method, find all potential second level friends as well as potential friends
-// from allUsers. */
+/******************************************************************************\
+ #PROBLEM-07
+ \******************************************************************************/
+/****** INSTRUCTIONS PROBLEM 7 ******/
+/* Here we are given three arrays: an array of friends, an array of second-level
+friends (friends of friends), and an array of all users. These arrays may share
+users. Write a function that takes in our existing friends and returns
+a function that will tell us if a given user is not already a friend. */
+var friends = ["Tom", "Dick", "Harry"];
+var secondLevelFriends = ["Anne", "Harry", "Quinton"];
+var allUsers = ["Tom", "Dick", "Harry", "Anne", "Quinton", "Katie", "Mary"];
 
-// // var potentialSecondLevelFriends = "?";
-// // var allPotentialFriends = "?";
+function findPotentialFriends(existingFriends) {
+ for (var i = 0; i<allUsers.length; i++)
+  if (allUsers[i])
+}
+
+var isNotAFriend = findPotentialFriends( friends );
+// isNotAFriend(allUsers[0]); // false
+// isNotAFriend(secondLevelFriends[2]); // true
 
 
-// /******************************************************************************\
-// 	#PROBLEM-08
-// \******************************************************************************/
+/******************************************************************************\
+ #PROBLEM-07 -- BLACK DIAMOND
+ \******************************************************************************/
+/* Using your findPotentialFriends function from above and the Array.filter
+method, find all potential second level friends as well as potential friends
+from allUsers. */
 
-// /****** INSTRUCTIONS PROBLEM 8 ******/
-// /* Here we have a for loop that will iterate as long as i is less than or equal
-// to 5. What we need to do is console.log(i) so that it logs like so:
-//  1 second after call - log 0
-//  2 seconds after call - log 1
-//  3 seconds after call - log 2
-//  4 seconds after call - log 3
-//  5 seconds after call - log 4
-//  6 seconds after call - log 5
-//  However, because each call to logCounter occurs after the loop has finished,
-//  the value of i has changed before the console.log executes. We'll need to use
-//  a closure to preserve a reference to i at the time of execution.
+// var potentialSecondLevelFriends = "?";
+// var allPotentialFriends = "?";
 
-//  Fix the code below to log the desired output.
-//  */
 
-// function timeOutCounter() {
-//   for (var i = 0; i <= 5; i++) {
-//   }  console.log(i);
-//     setTimeout(function() {
-//     	i * 1000
-// 	} );
+/******************************************************************************\
+	#PROBLEM-08
+\******************************************************************************/
 
-// }
-// timeOutCounter();
+/****** INSTRUCTIONS PROBLEM 8 ******/
+/* Here we have a for loop that will iterate as long as i is less than or equal
+to 5. What we need to do is console.log(i) so that it logs like so:
+ 1 second after call - log 0
+ 2 seconds after call - log 1
+ 3 seconds after call - log 2
+ 4 seconds after call - log 3
+ 5 seconds after call - log 4
+ 6 seconds after call - log 5
+ However, because each call to logCounter occurs after the loop has finished,
+ the value of i has changed before the console.log executes. We'll need to use
+ a closure to preserve a reference to i at the time of execution.
+
+ Fix the code below to log the desired output.
+ */
+
+function timeOutCounter() {
+  //  console.log(i);
+  for (var i = 0; i <= 0; i++) {
+  } console.log(i);
+    setTimeout(function() {
+    	i * 1000
+	} );
+
+}
+timeOutCounter();
